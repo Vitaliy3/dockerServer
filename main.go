@@ -10,7 +10,7 @@ import (
 func main() {
 
 	http.HandleFunc("/ha", func(writer http.ResponseWriter, request *http.Request) {
-		log, err := os.OpenFile("logs.log", os.O_APPEND|os.O_CREATE, 0666)
+		log, err := os.OpenFile("logs.log", os. os.O_CREATE|os.O_WRONLY|O_APPEND,os.ModePerm, 0666)
 		if err != nil {
 			panic(err)
 		}
